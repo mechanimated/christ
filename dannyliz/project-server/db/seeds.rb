@@ -52,7 +52,7 @@ ordinary_glycolic_toner = Product.create(name: "Glycolic Acid 7% Exfoliating Ton
 # glycolic acid https://www.sephora.com/product/the-ordinary-deciem-glycolic-acid-7-toning-solution-P427406
 br_lotion50 = Product.create(name: "Lotion P50", brand: "Biologique Recherche", price: "$34", chemicals: ["citric_acid", "lactic_acid", "malic_acid", "salicylic_acid", "gluconolactone", "niacinamide"])
 # citric acid, lactic acid, malic acid, salicylic acid, gluconolactone, niacinamide https://www.shoprescuespa.com/biologique-recherche-p50
-laroche_retinol = Product.create(name: "Pure Retinol Face Serum with Vitamin B3", brand: "La Roche-Posay", price: "39.99", chemicals: ["glycerin", "niacinamide", "dimethicone", "sodium_hyaluronate", "retinol", "citric_acid"])
+laroche_retinol = Product.create(name: "Pure Retinol Face Serum with Vitamin B3", brand: "La Roche-Posay", price: "$39.99", chemicals: ["glycerin", "niacinamide", "dimethicone", "sodium_hyaluronate", "retinol", "citric_acid"])
 # glycerin, niacinamide, dimethicone, sodium hyaluronate, retinol, citric acid https://www.dermstore.com/la-roche-posay-pure-retinol-face-serum-with-vitamin-b3/12434152
 ordinary_retinol = Product.create(name: "Retinol 1% in Squalane", brand: "The Ordinary", price: "$8.00", chemicals: ["squalane", "retinol"])
 # squalane, retinol https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441
