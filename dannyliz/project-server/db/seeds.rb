@@ -60,6 +60,6 @@ ordinary_retinol = Product.create(name: "Retinol 1% in Squalane", brand: "The Or
 25.times do |t|
     Routine.create(
         product_id: Product.all.sample.id,
-        ingredient_id: Ingredient.all.sample.id
+        ingredient_id: Ingredient.all.sample.id,
     )
 end

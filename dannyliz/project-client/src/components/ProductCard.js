@@ -2,11 +2,11 @@ import React from "react";
 import {useState} from 'react'
 
 
-export default function ProductCard(product, showProduct, reRender) {
+export default function ProductCard({product, showProduct, reRender}) {
 
     
     function saveProduct(event) {
-        fetch('http://localhost:9292/routines' ,{
+        fetch('http://localhost:9292/saved_products' ,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -18,17 +18,17 @@ export default function ProductCard(product, showProduct, reRender) {
     }
 
     const [saved, setSaved] = useState ({
-        id: "",
+        id: '',
         name: product.name, 
-        brand: product.brans, 
+        brand: product.brand, 
         price: product.price, 
         chemicals: product.chemicals
     })
  
     return (
 
-                <li>{product.product.name}<button onClick={((event) => showProduct(event, product))}>🔍</button>
-                <button onClick={((event) => saveProduct(event, product))}>💾</button></li>
+        <li onClick={((e) => showProduct(e, product))}>{product.name}
+        <button onClick={((e) => saveProduct(e, product))}>💾</button></li>
 
 
     )

@@ -16,6 +16,12 @@ class ApplicationController < Sinatra::Base
     product.to_json
   end
 
+
+  post "/saved_products" do
+    product = SavedProduct.create(name: params[:name], brand: params[:brand], price: params[:price], chemicals: params[:chemicals])
+    product.to_json
+  end
+
   post "/routines" do
     routine = Routine.create(ingredients: params[:ingredient_id], products: params[:product_id])
     routine.to_json
