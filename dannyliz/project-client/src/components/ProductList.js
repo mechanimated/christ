@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {useState} from "react"
 import ProductCard from "./ProductCard";
 
@@ -31,3 +32,11 @@ export default function ProductList(products) {
     </div>
   )
 }
+
+
+export default function ProductList() {
+  return (
+    <div></div>
+  )
+}
+

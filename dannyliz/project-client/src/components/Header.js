@@ -6,6 +6,7 @@ import React from 'react'
 
 export default function Header() {
   return (
+
     <div className='header-div' style={{ 
       backgroundPosition: '40% 50%',
       minHeight: '150px'
@@ -30,3 +31,13 @@ export default function Header() {
     </div>
   )
 }
+
+    <div>
+        <h1><em>Skinteractions</em></h1>
+        <Link classname="nav-links" to="*">Home</Link>
+        <Link classname="nav-Links" to="/upload">Upload A Routine</Link>
+        {/* <Link classname="nav-links" to" */}
+    </div>
+  )
+}
+
