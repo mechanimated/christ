@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from'../index.css';
 
-export default function UploadRoutine() {
+export default function RoutinePage() {
   return (
+
     <div className='routine-container'>
         <div className= 'routine-list-container'>Listed Routine
             <ul className={'routinelist'}>
@@ -16,9 +16,16 @@ export default function UploadRoutine() {
                 <li>ovflfv</li>
                 <li>ovflfv</li>
                 <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
+                <li>ovflfv</li>
             </ul>
         </div>
-    <div className='routine-image'>Upload Routine</div>
+        <div className='routine-image'>Product Image Goes Here</div>
     </div>
   )
 }

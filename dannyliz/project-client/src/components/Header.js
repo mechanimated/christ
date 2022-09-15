@@ -11,19 +11,20 @@ export default function Header() {
       minHeight: '150px'
 
   }}>
-        <h1 className='header'>Skinteractions</h1>
+        
+        <Link classname="nav-links" to="/home"><h1 className='header'>Skinteractions</h1></Link>
         <div style={{
           paddingLeft: '125px',
           marginTop: '39px'
         }}>
-        <Link className="nav-links" to="/upload"> My Routine</Link>
+        <Link classname="nav-links" to="/viewroutines"><h2 className='nav-links'>My Routine</h2></Link>
         </div>
         <br></br>
         <div style={{
-          paddingLeft: '243px',
-          marginTop: '71px'
+          paddingLeft: '238px',
+          marginTop: '65px'
         }}>
-        <Link className="nav-links" to="*">Home</Link>
+        <Link classname="nav-links" to="/upload"><h2 className='nav-links'>Products</h2></Link>
         </div>
         {/* <Link classname="nav-links" to" */}
     </div>

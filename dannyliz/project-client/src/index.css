@@ -69,12 +69,24 @@ ul.routinelist {
   max-width: 600px;
   margin-left: 3%
 }
+
 ul.routinelist > li {
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
-  
+  white-space: nowrap;  
 }
+
+.search-products {
+  width: 320px;
+  max-width: 500px;
+  align-self: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  background-color: rgb(195, 214, 150);
+  box-shadow: -2px 5px 15px grey;
+}
+
 .routine-image {
   width: 320px;
   height: 400px;

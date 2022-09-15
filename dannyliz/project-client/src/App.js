@@ -1,8 +1,8 @@
 import Header from "./components/Header"
-import ProductList from "./components/ProductList"
-import UploadRoutine from "./components/UploadRoutine"
+import Home from "./components/Home"
+import ProductPage from "./components/ProductPage"
 import{Link, Route, Routes} from 'react-router-dom'
-
+import RoutinePage from "./components/RoutinePage"
 
 import {BrowserRouter as Router} from 'react-router-dom'
 import { minHeight } from "@mui/system"
@@ -27,8 +27,9 @@ function App() {
     }}>
           <Header />
     <Routes>
-      <Route path="*" element={<ProductList/>}/>
-      <Route path="/upload" element={<UploadRoutine/>}/>
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/upload" element={<ProductPage/>}/>
+      <Route path="/viewroutines" element={<RoutinePage/>}/>
     </Routes>
     </div>
     </div>
