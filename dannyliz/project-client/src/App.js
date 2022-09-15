@@ -3,9 +3,8 @@ import Home from "./components/Home"
 import ProductPage from "./components/ProductPage"
 import{Link, Route, Routes} from 'react-router-dom'
 import RoutinePage from "./components/RoutinePage"
-
 import {BrowserRouter as Router} from 'react-router-dom'
-import { minHeight } from "@mui/system"
+
 function App() {
   return (
    <Router>

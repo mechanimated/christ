@@ -2,40 +2,34 @@ import React from "react";
 import {useState} from 'react'
 
 
-export default function ProductCard(product, saveProduct, showProduct) {
+export default function ProductCard(product, showProduct, reRender) {
 
     
-//   function saveProduct(event) {
-//     fetch('product database',{
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(fave),
-//     }).then(
-//       reRender((render=>!render))
-//     )
-//   }
-// PRETENDS TO SAVE FROM DB
+    function saveProduct(event) {
+        fetch('http://localhost:9292/routines' ,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(saved),
+        }).then(
+        reRender((render=>!render))
+        )
+    }
 
-    // const [add, setAdd] = useState({
-    //     id: "",
-    //     name: "", 
-    //     brand: "", 
-    //     price: "", 
-    //     chemicals: ""
-    // })
-// ONE DAY FOR ADDING UR OWN PRODUCTS
-  return (
-   <div className='routine-container'>
-        <div className= 'routine-list-container'>List of Products
-            <ul className={'routinelist'}>
-                <li className='product'>TESTING<button onClick={((e) => showProduct(e, product))}>🔍</button>
-                <button onClick={((e) => saveProduct(e, product))}>💾</button></li>
-            </ul>
-        </div>
-    </div>
-  )
+    const [saved, setSaved] = useState ({
+        id: "",
+        name: product.name, 
+        brand: product.brans, 
+        price: product.price, 
+        chemicals: product.chemicals
+    })
+ 
+    return (
+
+                <li>{product.product.name}<button onClick={((event) => showProduct(event, product))}>🔍</button>
+                <button onClick={((event) => saveProduct(event, product))}>💾</button></li>
+
+
+    )
 }
-
-

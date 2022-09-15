@@ -5,27 +5,24 @@ import Search from './Search'
 
 export default function ProductPage() {
 
-  // const [render, reRender] = useState(true)
-  // const [products, setProducts] = useState([])
-
   const [search, setSearch] = useState('')
- 
+  const [products, setProducts] = useState([])
+  const [render, reRender] = useState(true)
 
+  useEffect(() => {
+      fetch(`http://localhost:9292/products`)
+          .then(res => res.json())
+          .then(data => {
+              setProducts(data)
+          })
+  }, [render])
 
-  // useEffect(() => {
-  //     fetch(`database`)
-  //         .then(res => res.json())
-  //         .then(data => {
-  //             setProducts(data)
-  //         })
-  // }, [render])
-  // THIS IS PRETEND FETCHING DATA FROM SOMEWHERE
+  let list = products.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <div className='routine-container'>
+    <div>
       <Search search={setSearch}/>  
-      <ProductList/>
-    <div className='routine-image'>Product Image Goes Here</div>
+      <ProductList products={list} reRender={reRender}/>
     </div>
   )
 }
