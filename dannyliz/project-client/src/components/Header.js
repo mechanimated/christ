@@ -7,8 +7,8 @@ import React from 'react'
 export default function Header() {
   return (
     <div>
-        <h1><em>Skinteractions</em></h1>
-        <Link classname="nav-links" to="*">Home</Link>
+        <Link classname="nav-links" to="*"><h1><em>Skinteractions</em></h1></Link>
+        <Link classname="nav-links" to="/viewroutines">View Routines</Link>
         <Link classname="nav-Links" to="/upload">Upload A Routine</Link>
         {/* <Link classname="nav-links" to" */}
     </div>
