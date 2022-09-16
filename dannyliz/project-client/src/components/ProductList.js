@@ -9,7 +9,6 @@ export default function ProductList({reRender, products}) {
     function showProduct(event, product) {
     setDetails(product)
     }
-console.log(products)
     
     return (
     <div className='routine-container'>

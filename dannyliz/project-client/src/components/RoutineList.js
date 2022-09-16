@@ -1,24 +1,24 @@
 import React from 'react'
 import {useState} from "react"
-import ProductCard from "./ProductCard";
+import RoutineCard from "./RoutineCard";
 
-export default function ProductList({reRender, products}) {
+export default function RoutineList({reRender, savedProducts, handleSavedDelete, }) {
 
     const [details, setDetails] = useState([])
 
     function showProduct(event, product) {
     setDetails(product)
     }
-console.log(products)
     
     return (
     <div className='routine-container'>
         <div className= 'routine-list-container'>List of Products
             <ul className={'routinelist'}>
-                {products?.map((product, buttcheeks) => {
+                {savedProducts?.map((product, buttcheeks) => {
                 return ( 
-                <ProductCard reRender={reRender} product={product}  
-                id={product.id} key={buttcheeks} showProduct={showProduct} />
+                <RoutineCard reRender={reRender} product={product}  
+                id={product.id} key={buttcheeks} showProduct={showProduct}
+                handleSavedDelete={handleSavedDelete} />
                 )})}
             </ul>
         </div><br/>

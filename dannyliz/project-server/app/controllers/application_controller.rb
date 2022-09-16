@@ -6,6 +6,11 @@ class ApplicationController < Sinatra::Base
     products.to_json
   end
 
+  get "/saved_products" do
+    products = SavedProduct.all
+    products.to_json
+  end
+
   get "/routines" do
     routine = Routine.all
     routine.to_json
@@ -33,16 +38,16 @@ class ApplicationController < Sinatra::Base
     product.to_json
   end
 
-  patch "routines/:id" do
-    routine = Routine.find(params[:id])
-    routine.update(ingredients: params[:ingredient_id], products: params[:product_id])
+  patch "/saved_products/:id" do
+    routine = SavedProduct.find(params[:id])
+    routine.update(name: params[:name], brand: params[:brand], price: params[:price], chemicals: params[:chemicals])
     routine.to_json
   end
 
-  delete "/routines/:id" do
-    routine = Routine.find(params[:id])
-    routine.destroy
-    routine.to_json
+  delete "/saved_products/:id" do
+    saved_product = SavedProduct.find(params[:id])
+    saved_product.destroy
+    saved_product.to_json
   end
 
 

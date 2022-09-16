@@ -2,8 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ProductList from './ProductList'
 import Search from './Search'
-import NewProductForm from './NewProductForm'
-import NewProductDropdown from './NewProductDropdown.js'
+
 
 export default function ProductPage() {
 

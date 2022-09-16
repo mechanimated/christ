@@ -1,31 +1,35 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ProductList from './ProductList'
-import Search from './Search'
-import NewProductForm from './NewProductForm'
-import NewProductDropdown from './NewProductDropdown.js'
+import RoutineList from './RoutineList'
+import RoutineSearch from './RoutineSearch'
 
-export default function ProductPage() {
+
+export default function RoutinePage() {
 
   const [search, setSearch] = useState('')
-  const [products, setProducts] = useState([])
+  const [savedProducts, setSavedProducts] = useState([])
   const [render, reRender] = useState(true)
 
   useEffect(() => {
-      fetch(`http://localhost:9292/products`)
+      fetch(`http://localhost:9292/saved_products`)
           .then(res => res.json())
           .then(data => {
-              setProducts(data)
+              setSavedProducts(data)
           })
   }, [render])
+  
+  function handleSavedDelete(id) {
+    const newSavedProducts = savedProducts.filter((product) => product.id !== id)
+    setSavedProducts(newSavedProducts)
+}
 
-  let list = products.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
+  let list = savedProducts.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
     <div>
-      <Search search={setSearch}/>  
+      <RoutineSearch search={setSearch}/>  
 
-      <ProductList products={list} reRender={reRender}/>
+      <RoutineList reRender={reRender} handleSavedDelete={handleSavedDelete} savedProducts={list} />
       
     </div>
   )
