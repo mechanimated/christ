@@ -41,9 +41,9 @@ export default function RoutinePage() {
 // }).flat()
 let chemArray = []
 let chemTypeArray = []
+let chemTypeCheck = []
 
   function getChem(){
-
 
       list.forEach((product) => {
         chemArray.push(product.chemicals)
@@ -51,15 +51,11 @@ let chemTypeArray = []
           return e.split(', ')
         }).flat()   
       })
- 
       return chemArray
     }
   
   getChem()
 
-  
-let chemTypeCheck = []
-let i =0
 
   function getChemType() {
 
@@ -68,36 +64,68 @@ let i =0
       chemTypeArray = chemTypeArray.map((e) => {
         return e.split(', ')
       }).flat()   
-     
+      
     chemTypeArray.forEach((chemType) => {
-      // console.log(product.chem_type)
-      // console.log(chemArray)
-      if(chemType === chemArray[i]) {
-        chemTypeCheck.push(product.chem_type)
-        // console.log(chemTypeCheck)
-        i++
-      } else { i++}
+
+      if(chemArray.includes(product.name)) {
+
+        if(chemTypeCheck.indexOf(product.chem_type) === -1) {
+          chemTypeCheck.push(product.chem_type);
+        }
+
+      } else { }
     })
     })
-
-
     return chemTypeArray
   }
-  
+
   getChemType()
-console.log(ingredients.chem_type)
+
+let message = []
+
+function alertMe() {
+ if(chemTypeCheck.includes("vitamin B3") && chemTypeCheck.includes("alpha-hydroxy acid")) {
+  message.push('bad ret')
+ } else {}
+ if(chemTypeCheck.includes("vitamin C") && chemTypeCheck.includes("alpha-hydroxy acid")) {
+  message.push('bad C no work')
+ } else {}
+ if(chemTypeCheck.includes("phenol") && chemTypeCheck.includes("peroxide")) {
+  message.push('bad bleach')
+ } else {}
+
+ if(chemTypeCheck.includes("beta-hydroxy acid") && chemTypeCheck.includes("alpha-hydroxy acid")) {
+  message.push('bad dry')
+ } else {}
+
+ if(chemTypeCheck.includes("peroxide") && chemTypeCheck.includes("alpha-hydroxy acid")) {
+  message.push('bad dry')
+ } else {}
+
+ if(chemTypeCheck.includes("vitamin C") && chemTypeCheck.includes("peroxide")) {
+  message.push('bad C no work')
+ } else {}
+
+ if(chemTypeCheck.includes("vitamin B3") && chemTypeCheck.includes("beta-hydroxy acid")) {
+  message.push('bad ret 2 electric boogaloo')
+ } else {}
+
+ if(chemTypeCheck.includes("silicone")) {
+  message.push('careful order')
+ } else {}
+ if(!chemTypeCheck.includes("salicylate") && !chemTypeCheck.includes("dibenzoylmethane") && !chemTypeCheck.includes("cyanocinnamic ester")) {
+  message.push('no sunscreen')
+ } else {}
+
+}
+alertMe() 
 
 
-// pull list chemicals
-  //split
-  //compare to name
-  //use name to find chem_type
-  // switch case compare
 
   return (
     <div>
-      <RoutineSearch search={setSearch}/>  
-
+      <RoutineSearch search={setSearch}/> 
+      <div> <h3> {message}</h3></div> 
       <RoutineList reRender={reRender} handleSavedDelete={handleSavedDelete} savedProducts={list} />
       
     </div>
