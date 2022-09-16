@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from "react"
 import RoutineCard from "./RoutineCard";
+import NewProductForm from './NewProductForm'
 
-export default function RoutineList({reRender, savedProducts, handleSavedDelete, }) {
+export default function RoutineList({reRender, savedProducts, handleSavedDelete, checkboxArray}) {
 
     const [details, setDetails] = useState([])
 
@@ -12,7 +13,7 @@ export default function RoutineList({reRender, savedProducts, handleSavedDelete,
     
     return (
     <div className='routine-container'>
-        <div className= 'routine-list-container'>List of Products
+        <div className= 'routine-list-container'>  My Skincare Routine
             <ul className={'routinelist'}>
                 {savedProducts?.map((product, buttcheeks) => {
                 return ( 
@@ -21,19 +22,18 @@ export default function RoutineList({reRender, savedProducts, handleSavedDelete,
                 handleSavedDelete={handleSavedDelete} />
                 )})}
             </ul>
-        </div><br/>
-
-
-        {/* <div className= 'routine-list-container div2'>
-        <div className='routine-image'>Product Image Goes Here, eventually
-        <ul className={'routinelist'}>
-                <li><h3>{details.name}</h3></li>
+            <div className='routine-image'>About Your Product
+        <ul className={'productlist'}>
                 <li><h5>{details.brand}</h5></li>
                 <li><h5>{details.price}</h5></li> 
             </ul>
         
         </div>
-        </div> */}
+        </div>
+        <div className='form'>
+        <NewProductForm reRender={reRender}  checkboxArray={checkboxArray}/>
+        </div>
+        <br/>
     </div>
   )
 }

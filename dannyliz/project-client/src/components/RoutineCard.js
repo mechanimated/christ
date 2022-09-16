@@ -5,8 +5,8 @@ import EditRoutine from './EditRoutine'
 
 export default function RoutineCard({onUpdateRoutine, product, showProduct, reRender, handleSavedDelete, id}) {
 
-   
-  const {name, price, brand, chemicals} = product;
+    const [routineBody, setRoutineBody] = useState(product.name)
+    let name = product.name;
   const [isEditing, setIsEditing] = useState(false);
 
 function deleteProduct() {
@@ -22,37 +22,36 @@ function deleteProduct() {
 
     function handleUpdateRoutine(updatedRoutine){
         setIsEditing(false);
+        name=routineBody;
         onUpdateRoutine(updatedRoutine);
       }
     
     return (
       <li>
-          <span className="user">{product.name}</span>
           {/* <span className="time">{timestamp}</span> */}
           {isEditing ? (
             <EditRoutine
-            name={name}
-            brand={brand}
-            chemicals={chemicals}
-            price={price}
+            reRender={reRender}
+            routineBody={routineBody}
+            setRoutineBody={setRoutineBody}
             onUpdateRoutine={handleUpdateRoutine}
+            id={product.id}
             />
           ) : (
-            <p>{product.name}</p>
+            <p onClick={((e) => showProduct(e, product))}>{product.name}</p>
             )}
              <div className="actions">
-              <button onClick={() => setIsEditing((isEditing) => !isEditing)}>
-                <span role="img" aria-label="edit">
+              <button onClick={() => setIsEditing((isEditing) => !isEditing)} style={{ background: 'transparent', border: 'none' }}>
+                <span role="img" aria-label="edit" >
                   ✏️
                 </span>
               </button>
-              <button onClick={deleteProduct}>
+              <button onClick={deleteProduct} style={{ background: 'transparent', border: 'none' }}>
                 <span role="img" aria-label="delete">
                   🗑
                 </span>
               </button>
             </div>
-    
         </li>
       );
     

@@ -83,36 +83,36 @@ let message = []
 
 function alertMe() {
  if(chemTypeCheck.includes("vitamin B3") && chemTypeCheck.includes("alpha-hydroxy acid")) {
-  message.push('bad ret')
+  message.push('Retinols and AHAs should not be used together! ')
  } else {}
  if(chemTypeCheck.includes("vitamin C") && chemTypeCheck.includes("alpha-hydroxy acid")) {
-  message.push('bad C no work')
+  message.push('Try to use Vitamin C and other acids at different times of day. ')
  } else {}
  if(chemTypeCheck.includes("phenol") && chemTypeCheck.includes("peroxide")) {
-  message.push('bad bleach')
+  message.push('Dark spot treatments and peroxides can bleach your skin! ')
  } else {}
 
  if(chemTypeCheck.includes("beta-hydroxy acid") && chemTypeCheck.includes("alpha-hydroxy acid")) {
-  message.push('bad dry')
+  message.push('AHAs and BHAs can dry out skin. Be sure to moisturize after use. ')
  } else {}
 
  if(chemTypeCheck.includes("peroxide") && chemTypeCheck.includes("alpha-hydroxy acid")) {
-  message.push('bad dry')
+  message.push('Peroxides and AHAs can cause dry, flaky skin. ')
  } else {}
 
  if(chemTypeCheck.includes("vitamin C") && chemTypeCheck.includes("peroxide")) {
-  message.push('bad C no work')
+  message.push('Vitamin C and peroxide neutralize each other. Best not to use them together. ')
  } else {}
 
  if(chemTypeCheck.includes("vitamin B3") && chemTypeCheck.includes("beta-hydroxy acid")) {
-  message.push('bad ret 2 electric boogaloo')
+  message.push('Retinols and BHAs can irritate and redden the skin. ')
  } else {}
 
  if(chemTypeCheck.includes("silicone")) {
-  message.push('careful order')
+  message.push('Make sure you use products containing silicone last in your routine. ')
  } else {}
  if(!chemTypeCheck.includes("salicylate") && !chemTypeCheck.includes("dibenzoylmethane") && !chemTypeCheck.includes("cyanocinnamic ester")) {
-  message.push('no sunscreen')
+  message.push('Your skincare routine does not include sunscreen! Consider adding some. ')
  } else {}
 
 }
@@ -122,9 +122,9 @@ alertMe()
   return (
     <div>
       <RoutineSearch search={setSearch}/> 
-      <div> <h3> {message}</h3></div> 
-      <RoutineList reRender={reRender} handleSavedDelete={handleSavedDelete} savedProducts={list} />
-      <NewProductForm checkboxArray={checkboxArray}/>
+      <div className='message'> {message}</div> 
+      <RoutineList checkboxArray={checkboxArray} reRender={reRender} handleSavedDelete={handleSavedDelete} savedProducts={list} />
+      
       
     </div>
   )

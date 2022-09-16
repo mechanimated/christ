@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-function EditRoutine({ id, body, onUpdateRoutine, product }) {
-  const [routineBody, setRoutineBody] = useState(body);
-//   const [brandBody, setBrandBody] = useState(product.name)
+function EditRoutine({reRender, id, body, onUpdateRoutine, product, routineBody, setRoutineBody }) {
+ 
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -13,13 +12,14 @@ function EditRoutine({ id, body, onUpdateRoutine, product }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        body:routineBody
+        name:routineBody
 
       }),
     })
       .then((r) => r.json())
-      .then((updatedRoutine) => onUpdateRoutine(updatedRoutine));
-  }
+      .then(reRender((render=>!render))
+        )
+    }
 
   return (
     <form className="edit-message" onSubmit={handleFormSubmit}>

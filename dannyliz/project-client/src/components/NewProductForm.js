@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react'
 
 
-function NewProductForm({ checkboxArray }) {
+function NewProductForm({reRender, checkboxArray }) {
 
 
 
@@ -43,8 +43,8 @@ function NewProductForm({ checkboxArray }) {
             },
             body: JSON.stringify(newProduct),
         }).then(
-            console.log("posted"))
-     
+            reRender((render=>!render))
+            )
     }
 
     const [form, setForm] = useState({
@@ -70,12 +70,15 @@ function NewProductForm({ checkboxArray }) {
             <form>
                 <div>
                     <input onChange={handleChange} value={form.name}
-                        type="text" name="name" placeholder="Name" />
+                        type="text" name="name" placeholder="Name" style ={{width: '100px'}}/>
                     <input onChange={handleChange} value={form.brand}
-                        type="text" name="brand" placeholder="Brand" />
+                        type="text" name="brand" placeholder="Brand" style ={{width: '100px'}}/>
                     <input onChange={handleChange} value={form.price}
-                        type="text" name="price" placeholder="Price" />
+                        type="text" name="price" placeholder="Price" style ={{width: '80px'}} />
                 </div>
+                <div style ={{alignContents: 'center'}}> 
+                    <p>Select ingredients in your product!</p></div>
+               
                 {checkboxArray.map((li, index) => (
                     <div key={index}>
                         <input

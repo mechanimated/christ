@@ -40,18 +40,9 @@ code {
   text-shadow: 0px 0px 5px #2AC60F;
 }
 
-.routine-container {
-  width: 1000px;
-  margin-left: 20%;
-  margin-top: 3%;
-  align-content: center;
-  
-}
-
 .routine-list-container {
-  width: 820px;
+  width: 30%;
   height: 400px;
-  max-width: 500px;
   align-self: center;
   text-align: left;
   text-indent: 30px;
@@ -63,6 +54,40 @@ code {
   background-color: beige;
   box-shadow: -2px 5px 15px grey;
 }
+
+.message {
+  width: 30%;
+  height: 60px;
+  align-self: center;
+  text-align: left;
+  text-indent: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  margin-left: 10%;
+  background-color: rgb(216, 181, 168);
+  box-shadow: -2px 5px 15px rgb(243, 49, 49);
+}
+
+
+.form {
+  display: inline-block;
+  padding: 1rem 1rem;
+  width: 30%;
+  height: 400px;
+  align-self: center;
+  text-align: left;
+  text-indent: 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+  display: inline-block;
+  margin-left: 10%;
+  background-color: beige;
+  box-shadow: -2px 5px 15px grey;
+}
+
 
 ul.routinelist {
   max-width: 600px;
@@ -87,18 +112,33 @@ ul.routinelist > li {
 }
 
 .routine-image {
-  width: 320px;
-  height: 400px;
-  max-width: 500px;
+  width: 220px;
+  height: 80px;
   align-self: center;
   text-align: left;
-  text-indent: 40px;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
+  text-indent: 20px;
+  overflow-x: auto;
   overflow-y: auto;
   white-space: nowrap;
   display: inline-block;
-  margin-left: 15%;
-  background-color: beige;
+  margin-left: 18%;
+  background-color: rgb(107, 245, 89);
   box-shadow: -2px 5px 15px grey;
+}
+
+.h2 {
+  font-size: 24;
+
+}
+
+ul.productlist {
+  max-width: 600px;
+  margin-left: 3%
+}
+
+ul.productlist > li {
+  text-overflow: ellipsis;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: nowrap;  
 }

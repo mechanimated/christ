@@ -13,9 +13,8 @@ function App() {
       backgroundImage: 'url(https://img.freepik.com/free-photo/skin-care-cosmetology-products_658428-374.jpg?w=2000)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      width: '100%',
-      height: '100vh',
+      backgroundAttachment: 'fixed',
+      
   }}>
     <div style={{
       backgroundImage: 'url(https://www.jctropicals.us/wp-content/uploads/2021/02/jc-tropical-aloe-vera-leaf.png)',
