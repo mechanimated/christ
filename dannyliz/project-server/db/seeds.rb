@@ -37,24 +37,24 @@ octisalate = Ingredient.create(name: "octisalate", chem_type: "salicylate", trea
 octocrylene = Ingredient.create(name: "octocrylene", chem_type: "cyanocinnamic ester", treatment: "sunscreen")
 tretinoin = Ingredient.create(name: "tretinoin", chem_type: "vitamin A", treatment: "acne")
 
-puts "Creating Product..."
-skinceuticals_cleanser = Product.create(name: "Soothing Cleanser", brand: "Skinceuticals", price: "$36", chemicals: ["sorbitol", "glycerin", "propylene_glycol", "ascorbic_acid"])
+puts "Creating products..."
+skinceuticals_cleanser = Product.create(name: "Soothing Cleanser", brand: "Skinceuticals", price: "$36", chemicals: "sorbitol, glycerin, propylene_glycol, ascorbic_acid")
 # sorbitol, glycerin, propylene glycol, ascorbic acid, https://www.skinceuticals.com/soothing-cleanser-3606000463660
-byoma_hydrating_serum = Product.create(name: "Hydrating Serum Tri-Ceramide Complex", brand: "BYOMA", price: "$15.99", chemicals: ["glycerin", "ceramide", "squalane", "butelyne_glycol", "lactic acid"])
+byoma_hydrating_serum = Product.create(name: "Hydrating Serum Tri-Ceramide Complex", brand: "BYOMA", price: "$15.99", chemicals: "glycerin, ceramide, squalane, butelyne_glycol, lactic acid")
 # glycerin, ceramide, squalane, butelyne glycol, lactic acid  https://byoma.com/product/hydrating-serum/
-olay_regenerist = Product.create(name: "Regenerist Micro-Sculpting Cream", brand: "Olay", price: "$36.99", chemicals: ["glycerin", "niacinamide", "sodium_hyaluronate", "isohexadecane"])
+olay_regenerist = Product.create(name: "Regenerist Micro-Sculpting Cream", brand: "Olay", price: "$36.99", chemicals: "glycerin, niacinamide, sodium_hyaluronate, isohexadecane")
 # glycerin, niacinamide, sodium hyaluronate, isohexadecane https://www.ulta.com/p/regenerist-micro-sculpting-cream-xlsImpprod5981450
-vichy_liftactiv= Product.create(name: "LiftActiv Peptide-C Face Sunscreen", brand: "Vichy", price: "$39", chemicals: ["glycerin", "dimethcone", "glycolic acid", "sodium hyaluronate", "stearic acid", "avobenzone", "homosalate", "octisalate", "octocrylene"])
+vichy_liftactiv= Product.create(name: "LiftActiv Peptide-C Face Sunscreen", brand: "Vichy", price: "$39", chemicals: "glycerin, dimethcone, glycolic acid, sodium hyaluronate, stearic acid, avobenzone, homosalate, octisalate, octocrylene")
 # glycerin, dimethcone, glycolic acid, sodium hyaluronate, stearic acid, avobenzone, homosalate, octisalate, octocrylene  https://www.ulta.com/p/liftactiv-peptide-c-face-sunscreen-spf-30-pimprod2013305
-cerave_sa_cleanser = Product.create(name: "Renewing SA Cleanser", brand: "CeraVe", price: "$11.49", chemicals: ["glycerin", "ceramide", "salicylic_acid", "niacinamide", "hyaluronic_acid"])
+cerave_sa_cleanser = Product.create(name: "Renewing SA Cleanser", brand: "CeraVe", price: "$11.49", chemicals: "glycerin, ceramide, salicylic_acid, niacinamide, hyaluronic_acid")
 # glycerin, ceramide, salicylic acid, niacinamide, hyaluronic acid https://www.cerave.com/skincare/cleansers/renewing-sa-cleanser
-ordinary_glycolic_toner = Product.create(name: "Glycolic Acid 7% Exfoliating Toning Solution", brand: "The Ordinary", price: "$10", chemicals: ["glycolic acid"])
+ordinary_glycolic_toner = Product.create(name: "Glycolic Acid 7% Exfoliating Toning Solution", brand: "The Ordinary", price: "$10", chemicals: "glycolic acid")
 # glycolic acid https://www.sephora.com/product/the-ordinary-deciem-glycolic-acid-7-toning-solution-P427406
-br_lotion50 = Product.create(name: "Lotion P50", brand: "Biologique Recherche", price: "$34", chemicals: ["citric_acid", "lactic_acid", "malic_acid", "salicylic_acid", "gluconolactone", "niacinamide"])
+br_lotion50 = Product.create(name: "Lotion P50", brand: "Biologique Recherche", price: "$34", chemicals: "citric_acid, lactic_acid, malic_acid, salicylic_acid, gluconolactone, niacinamide")
 # citric acid, lactic acid, malic acid, salicylic acid, gluconolactone, niacinamide https://www.shoprescuespa.com/biologique-recherche-p50
-laroche_retinol = Product.create(name: "Pure Retinol Face Serum with Vitamin B3", brand: "La Roche-Posay", price: "$39.99", chemicals: ["glycerin", "niacinamide", "dimethicone", "sodium_hyaluronate", "retinol", "citric_acid"])
+laroche_retinol = Product.create(name: "Pure Retinol Face Serum with Vitamin B3", brand: "La Roche-Posay", price: "$39.99", chemicals: "glycerin, niacinamide, dimethicone, sodium_hyaluronate, retinol, citric_acid")
 # glycerin, niacinamide, dimethicone, sodium hyaluronate, retinol, citric acid https://www.dermstore.com/la-roche-posay-pure-retinol-face-serum-with-vitamin-b3/12434152
-ordinary_retinol = Product.create(name: "Retinol 1% in Squalane", brand: "The Ordinary", price: "$8.00", chemicals: ["squalane", "retinol"])
+ordinary_retinol = Product.create(name: "Retinol 1% in Squalane", brand: "The Ordinary", price: "$8.00", chemicals: "squalane, retinol")
 # squalane, retinol https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441
 
 25.times do |t|

@@ -5,6 +5,11 @@ class ApplicationController < Sinatra::Base
     products = Product.all
     products.to_json
   end
+  
+  get "/ingredients" do
+    products = Ingredient.all
+    products.to_json
+  end
 
   get "/saved_products" do
     products = SavedProduct.all
