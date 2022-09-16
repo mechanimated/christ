@@ -24,17 +24,16 @@ export default function RoutineList({reRender, savedProducts, handleSavedDelete,
         </div><br/>
 
 
-        <div className= 'routine-list-container div2'>
+        {/* <div className= 'routine-list-container div2'>
         <div className='routine-image'>Product Image Goes Here, eventually
         <ul className={'routinelist'}>
                 <li><h3>{details.name}</h3></li>
                 <li><h5>{details.brand}</h5></li>
                 <li><h5>{details.price}</h5></li> 
             </ul>
-            {/* <img src='https://byoma.com/wp-content/uploads/2022/01/Clarifying-Serum-Lifestyle.jpg' alt='gay'/>
-                */}
+        
         </div>
-        </div>
+        </div> */}
     </div>
   )
 }

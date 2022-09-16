@@ -45,7 +45,9 @@ class ApplicationController < Sinatra::Base
 
   patch "/saved_products/:id" do
     routine = SavedProduct.find(params[:id])
-    routine.update(name: params[:name], brand: params[:brand], price: params[:price], chemicals: params[:chemicals])
+    routine.update(
+      name: params[:name] || routine.name, brand: params[:brand] || routine.brand, price: params[:price] || routine.price, chemicals: params[:chemicals] || routine.chemicals
+    )
     routine.to_json
   end
 

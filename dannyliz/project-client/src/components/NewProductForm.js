@@ -1,93 +1,105 @@
 import React from "react";
-import {useState} from 'react'
+import { useState } from 'react'
 
 
-// Function for posting new data to db.
-function NewProductForm({checkboxArray}) {
+function NewProductForm({ checkboxArray }) {
 
 
 
-let data = []
+    let data = []
 
 
-  function getData() { 
-    checkboxArray.forEach((chemical, index) => {
-        data.push({
-            p_id: index,
-            p_name: chemical,
-            isChecked: false
+    function getData() {
+        checkboxArray.forEach((chemical, index) => {
+            data.push({
+                p_id: index,
+                p_name: chemical,
+                isChecked: false
+            })
+
         })
-
-    })}
+    }
     getData()
 
-//  console.log(data)
 
-
-    // const [dataForm, setDataForm] = useState(data);
-
-    // const [newChems, setNewChems] = useState(data);
-  
-    let newChems = []
-    // const changeCheck = (x) => {
-    //     console.log(x)
-    //     // if(x.isChecked === true)
-    //     newChems.push(x);
-    // };
-  
     const handleSubmit = () => {
         let chemicals = ""
         data.forEach((data) => {
 
-            if(data.isChecked === true) {
-                
+            if (data.isChecked === true) {
+
                 chemicals += `${data.p_name} ,`
-            } else { console.log("i cry")}
+            } else { console.log("i cry") }
         })
-        console.log({name:"",brand:"",price:"",chemicals:chemicals});
-        // fetch(`http://localhost:9292/saved_products`,{
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify(data),
-        // }).then(
-        // console.log("posted"))
-                ///POST NEW ENTRY
-            }
+        let newProduct = {
+            ...form,
+            chemicals: chemicals
+        };
+        console.log(newProduct);
+        fetch(`http://localhost:9292/saved_products`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newProduct),
+        }).then(
+            console.log("posted"))
+     
+    }
 
-    
+    const [form, setForm] = useState({
+        name: "",
+        brand: "",
+        price: "",
+        chemicals: ","
+    })
 
- 
-    
+
+    const handleChange = (event) => {
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value
+        })
+
+    }
+
+    console.log(form)
+
     return (
-      <div className="App">
-        <form>
-            {/* more fields */}
-          {checkboxArray.map((li, index) => (
-            <div key={index}>
-              <input
-                type="checkbox"
-                value={li}
-                id={index}
-                checked={li.isChecked}
-                onChange={() => {
-                    data[index].isChecked = !data[index].isChecked
-                    
-                    console.log(data[index].isChecked)
-                    }
-                }
-              />
-              <label htmlFor={li}>{li}</label>
-            </div>
-          ))}
-          <button type="button" onClick={handleSubmit}>
-            Submit
-          </button>
-        </form>
-      </div>
+        <div className="App">
+            <form>
+                <div>
+                    <input onChange={handleChange} value={form.name}
+                        type="text" name="name" placeholder="Name" />
+                    <input onChange={handleChange} value={form.brand}
+                        type="text" name="brand" placeholder="Brand" />
+                    <input onChange={handleChange} value={form.price}
+                        type="text" name="price" placeholder="Price" />
+                </div>
+                {checkboxArray.map((li, index) => (
+                    <div key={index}>
+                        <input
+                            type="checkbox"
+                            name="chemicals"
+                            value={li}
+                            id={index}
+                            checked={li.isChecked}
+                            onChange={() => {                  
+                                data[index].isChecked = !data[index].isChecked
+                                console.log(data[index].isChecked)
+                            }
+                            }
+                        />
+                        <label htmlFor={li}>{li}</label>
+                    </div>
+                ))}
+                <button type="button" onClick={handleSubmit}>
+                    Submit
+                </button>
+            </form>
+        </div>
     );
-  }
+}
 
 
 

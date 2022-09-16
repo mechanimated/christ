@@ -27,8 +27,8 @@ export default function ProductCard({product, showProduct, reRender}) {
  
     return (
 
-        <li onClick={((e) => showProduct(e, product))}>{product.name}
-        <button onClick={((e) => saveProduct(e, product))}>💾</button></li>
+        <li onClick={((e) => showProduct(e, product))}><button style={{ background: 'transparent', border: 'none' }} onClick={((e) => saveProduct(e, product))}>💾</button>{product.name}
+        </li>
 
 
     )
