@@ -13,7 +13,7 @@ function App() {
       backgroundImage: 'url(https://img.freepik.com/free-photo/skin-care-cosmetology-products_658428-374.jpg?w=2000)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      backgroundAttachment: 'scroll',
       width: '100%',
       height: '100vh',
   }}>
@@ -22,7 +22,7 @@ function App() {
       minHeight: '900px',
       backgroundRepeat: 'no-repeat',
       backgroundSize: '400px',
-      backgroundPosition: '0% 0%',
+      backgroundAttachment: 'scroll',
     }}>
           <Header />
     <Routes>

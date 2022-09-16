@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import RoutineList from './RoutineList'
 import RoutineSearch from './RoutineSearch'
+import NewProductForm from './NewProductForm'
 
 
 export default function RoutinePage() {
@@ -35,13 +36,11 @@ export default function RoutinePage() {
   let list = savedProducts.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
 
 
-   
-//   temp1.map((e) => {
-//     return e.split(', ')
-// }).flat()
 let chemArray = []
 let chemTypeArray = []
 let chemTypeCheck = []
+let checkboxArray= []
+let message = []
 
   function getChem(){
 
@@ -64,7 +63,7 @@ let chemTypeCheck = []
       chemTypeArray = chemTypeArray.map((e) => {
         return e.split(', ')
       }).flat()   
-      
+      checkboxArray = chemTypeArray
     chemTypeArray.forEach((chemType) => {
 
       if(chemArray.includes(product.name)) {
@@ -81,7 +80,6 @@ let chemTypeCheck = []
 
   getChemType()
 
-let message = []
 
 function alertMe() {
  if(chemTypeCheck.includes("vitamin B3") && chemTypeCheck.includes("alpha-hydroxy acid")) {
@@ -121,12 +119,12 @@ function alertMe() {
 alertMe() 
 
 
-
   return (
     <div>
       <RoutineSearch search={setSearch}/> 
       <div> <h3> {message}</h3></div> 
       <RoutineList reRender={reRender} handleSavedDelete={handleSavedDelete} savedProducts={list} />
+      <NewProductForm checkboxArray={checkboxArray}/>
       
     </div>
   )
